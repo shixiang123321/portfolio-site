@@ -26,6 +26,7 @@
       --accent-2: #78ecff;
       --accent-soft: rgba(114, 183, 255, 0.14);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+      --page: calc(100vw - 96px);
       --page: min(1380px, calc(100vw - 96px));
       --header-h: 92px;
       --radius: 4px;
@@ -77,6 +78,10 @@
     .page-loader {
       position: fixed;
       z-index: 10000;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       inset: 0;
       display: grid;
       place-items: center;
@@ -98,13 +103,15 @@
     }
 
     .page-loader-inner {
+      width: 420px;
+      max-width: calc(100vw - 64px);
       width: min(420px, calc(100vw - 64px));
     }
 
     .page-loader-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0;
       margin-bottom: 30px;
       font-family: "Space Grotesk", sans-serif;
       font-size: 13px;
@@ -115,6 +122,7 @@
     .page-loader-brand img {
       width: 50px;
       height: auto;
+      margin-right: 10px;
     }
 
     .page-loader-meta {
@@ -144,6 +152,7 @@
     }
 
     body.landing-mode {
+      height: 100vh;
       height: 100svh;
       overflow: hidden;
     }
@@ -257,7 +266,7 @@
       justify-self: start;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 0;
       font-family: "Space Grotesk", sans-serif;
       font-size: 16px;
       font-weight: 500;
@@ -269,6 +278,7 @@
       height: auto;
       display: block;
       flex: 0 0 auto;
+      margin-right: 10px;
     }
 
     .brand-name {
@@ -282,7 +292,11 @@
     .primary-nav {
       display: flex;
       align-items: center;
-      gap: 38px;
+      gap: 0;
+    }
+
+    .primary-nav > * + * {
+      margin-left: 38px;
     }
 
     .primary-nav a {
@@ -321,7 +335,11 @@
       justify-self: end;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0;
+    }
+
+    .header-actions > * + * {
+      margin-left: 8px;
     }
 
     .icon-button,
@@ -384,6 +402,7 @@
     .hero {
       position: relative;
       min-height: 720px;
+      height: 100vh;
       height: 100svh;
       overflow: hidden;
       color: #fff;
@@ -393,6 +412,10 @@
     .liquid-ether-layer {
       position: absolute;
       z-index: 2;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
@@ -415,6 +438,10 @@
     .slides,
     .slide {
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       inset: 0;
     }
 
@@ -465,6 +492,10 @@
 
     .slide-media {
       position: absolute;
+      top: -3%;
+      right: -3%;
+      bottom: -3%;
+      left: -3%;
       inset: -3%;
       background-image:
         linear-gradient(90deg, rgba(4, 6, 9, .83) 0%, rgba(4, 6, 9, .48) 47%, rgba(4, 6, 9, .22) 100%),
@@ -483,6 +514,10 @@
     .slide-media::before {
       content: "";
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       inset: 0;
       opacity: .22;
       background:
@@ -494,6 +529,10 @@
     .intro-starfield {
       position: absolute;
       z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       inset: 0;
       width: 100%;
       height: 100%;
@@ -544,6 +583,9 @@
       top: -12%;
       bottom: -12%;
       left: 0;
+      width: 22vw;
+      min-width: 150px;
+      max-width: 410px;
       width: clamp(150px, 22vw, 410px);
       opacity: 0;
       pointer-events: none;
@@ -584,6 +626,7 @@
       width: var(--page);
       height: 100%;
       margin: 0 auto;
+      padding-top: 18vh;
       padding-top: max(160px, 18vh);
       display: flex;
       flex-direction: column;
@@ -651,6 +694,7 @@
     .slide-kicker {
       margin: 0 0 6px;
       font-family: "Space Grotesk", sans-serif;
+      font-size: 20px;
       font-size: clamp(16px, 1.5vw, 23px);
       font-weight: 600;
       text-transform: uppercase;
@@ -659,6 +703,7 @@
     .slide-title {
       max-width: 960px;
       margin: 0;
+      font-size: 8vw;
       font-size: clamp(58px, 8vw, 132px);
       font-weight: 900;
       line-height: .92;
@@ -674,12 +719,14 @@
     .slide-title.is-horizontal {
       max-width: none;
       white-space: nowrap;
+      font-size: 7.4vw;
       font-size: clamp(46px, 7.4vw, 118px);
       letter-spacing: -.08em;
     }
 
     .slide-title.office-title {
       max-width: none;
+      font-size: 7.2vw;
       font-size: clamp(56px, 7.2vw, 116px);
       letter-spacing: -.075em;
     }
@@ -705,6 +752,7 @@
     }
 
     .slide-title.office-title.graphic-software-title {
+      font-size: 6.2vw;
       font-size: clamp(48px, 6.2vw, 100px);
     }
 
@@ -723,6 +771,7 @@
       max-width: 650px;
       margin: 28px 0 0;
       color: rgba(255, 255, 255, .73);
+      font-size: 17px;
       font-size: clamp(15px, 1.25vw, 19px);
       font-weight: 300;
       line-height: 1.85;
@@ -731,6 +780,7 @@
     .intro-copy {
       max-width: 760px;
       margin-top: 22px;
+      font-size: 17px;
       font-size: clamp(15px, 1.08vw, 18px);
       line-height: 1.72;
     }
@@ -740,6 +790,8 @@
     }
 
     .intro-tools {
+      width: 760px;
+      max-width: 100%;
       width: min(760px, 100%);
       margin-top: 28px;
       display: grid;
@@ -768,6 +820,7 @@
     .intro-tool-list {
       color: rgba(255, 255, 255, .9);
       font-family: "Space Grotesk", sans-serif;
+      font-size: 14px;
       font-size: clamp(12px, .9vw, 15px);
       font-weight: 500;
       line-height: 1.55;
@@ -868,6 +921,7 @@
       width: calc(100vw - 80px);
       margin: 0 auto;
       display: grid;
+      grid-template-columns: 96px 34vw 96px;
       grid-template-columns: 96px clamp(360px, 34vw, 590px) 96px;
       align-items: center;
       justify-content: space-between;
@@ -1386,6 +1440,7 @@
     #projectDialog {
       inset: 0;
       width: 100vw;
+      height: 100vh;
       height: 100svh;
       margin: 0;
     }
@@ -1414,6 +1469,7 @@
 
     .dialog-hero {
       position: relative;
+      min-height: 100vh;
       min-height: 100svh;
       display: flex;
       align-items: center;
@@ -2290,6 +2346,35 @@
       transform: none;
     }
 
+    .video-compat-notice {
+      position: absolute;
+      z-index: 4;
+      top: 50%;
+      left: 50%;
+      width: calc(100% - 48px);
+      max-width: 520px;
+      padding: 18px 22px;
+      display: none;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 14px;
+      color: rgba(255,255,255,.9);
+      background: rgba(8,10,14,.84);
+      box-shadow: 0 18px 54px rgba(0,0,0,.42);
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .media-frame.is-video-incompatible .video-compat-notice {
+      display: block;
+    }
+
+    .media-frame.is-video-incompatible .case-media-visual {
+      opacity: .42;
+    }
+
     .media-frame::after {
       content: "";
       position: absolute;
@@ -2445,6 +2530,7 @@
     }
 
     .category-case-body {
+      min-height: 100vh;
       min-height: 100svh;
     }
 
@@ -2998,6 +3084,7 @@
       }
 
       .dialog-hero {
+        min-height: 100vh;
         min-height: 100svh;
         align-items: end;
         padding: 132px 22px 64px;
@@ -3195,6 +3282,61 @@
       }
     }
 
+    /* 兼容不支持 inset 与 aspect-ratio 的旧版浏览器。 */
+    .progress-fill,
+    .project-card-media,
+    .project-card::before,
+    #projectDialog,
+    .dialog-hero::after,
+    .drift-wall__overlay,
+    .effect-lightbox,
+    .case-media-embed,
+    .webpage-preview-open,
+    .webpage-lightbox,
+    .case-media-visual,
+    .media-frame::after,
+    .case-media-description::before,
+    .case-media-name::before,
+    .category-case-hero > .side-rays-container,
+    .mobile-menu {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .drift-wall__inner {
+      top: calc(var(--dw-gap) / 2);
+      right: calc(var(--dw-gap) / 2);
+      bottom: calc(var(--dw-gap) / 2);
+      left: calc(var(--dw-gap) / 2);
+    }
+
+    .specular-button__fx {
+      top: -20px;
+      right: -20px;
+      bottom: -20px;
+      left: -20px;
+    }
+
+    @supports not (aspect-ratio: 16 / 9) {
+      .media-frame.has-video,
+      .media-frame.has-pdf {
+        height: 56.25vw;
+        max-height: 860px;
+      }
+
+      .media-frame.has-webpage.is-wide-dashboard {
+        height: 50vw;
+        max-height: 920px;
+      }
+
+      .media-frame.has-excel {
+        height: 48vw;
+        max-height: 860px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -3258,6 +3400,19 @@
       </div>
     </div>
   </div>
+
+  <script>
+    (function () {
+      window.setTimeout(function () {
+        var loader = document.getElementById("pageLoader");
+        if (!loader || loader.hidden) return;
+        loader.className += " is-complete";
+        window.setTimeout(function () {
+          loader.hidden = true;
+        }, 520);
+      }, 7000);
+    }());
+  </script>
 
   <audio id="backgroundMusic" preload="metadata" autoplay loop aria-hidden="true">
     <source src="https://1411712248.vod-qcloud.com/41be6821vodcq1411712248/5986a6455001834814028598752/HZuVqSjEltQA.mp3" type="audio/mpeg">
@@ -3670,6 +3825,50 @@
 
   <script>
     (() => {
+      if (!Object.fromEntries) {
+        Object.fromEntries = entries => {
+          const result = {};
+          Array.from(entries).forEach(entry => {
+            result[entry[0]] = entry[1];
+          });
+          return result;
+        };
+      }
+
+      if (!Promise.allSettled) {
+        Promise.allSettled = promises => Promise.all(Array.from(promises).map(promise =>
+          Promise.resolve(promise).then(
+            value => ({ status: "fulfilled", value }),
+            reason => ({ status: "rejected", reason })
+          )
+        ));
+      }
+
+      if (!Promise.prototype.finally) {
+        Promise.prototype.finally = function (handler) {
+          const PromiseConstructor = this.constructor;
+          return this.then(
+            value => PromiseConstructor.resolve(handler()).then(() => value),
+            reason => PromiseConstructor.resolve(handler()).then(() => { throw reason; })
+          );
+        };
+      }
+
+      if (!Element.prototype.matches) {
+        Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+      }
+
+      if (!Element.prototype.closest) {
+        Element.prototype.closest = function (selector) {
+          let element = this;
+          while (element && element.nodeType === 1) {
+            if (element.matches(selector)) return element;
+            element = element.parentElement;
+          }
+          return null;
+        };
+      }
+
       const projectData = {
         "ue-product": {
           type: "PRODUCT INTERACTION · UNREAL ENGINE 5",
@@ -4114,7 +4313,7 @@
 
       function updatePageLoader(value) {
         const progress = Math.max(8, Math.min(100, Math.round(value)));
-        pageLoaderFill?.style.setProperty("transform", `scaleX(${progress / 100})`);
+        if (pageLoaderFill) pageLoaderFill.style.setProperty("transform", `scaleX(${progress / 100})`);
         if (pageLoaderValue) pageLoaderValue.textContent = `${progress}%`;
       }
 
@@ -4138,7 +4337,7 @@
       }
 
       function ensureSlideImage(slide, priority = "auto") {
-        const media = slide?.querySelector(".slide-media[data-image]");
+        const media = slide ? slide.querySelector(".slide-media[data-image]") : null;
         if (!media || media.dataset.imageReady === "true") return Promise.resolve();
         if (slideImagePromises.has(media)) return slideImagePromises.get(media);
 
@@ -4186,8 +4385,13 @@
 
         const criticalTasks = [
           Promise.race([waitForImage("assets/portfolio-hero-stargazer.png", "high"), timeoutAfter(2600)]),
-          Promise.race([document.fonts?.ready || Promise.resolve(), timeoutAfter(1800)]),
-          Promise.race([document.querySelector(".brand-logo")?.decode?.().catch(() => {}) || Promise.resolve(), timeoutAfter(900)])
+          Promise.race([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), timeoutAfter(1800)]),
+          Promise.race([(() => {
+            const brandLogo = document.querySelector(".brand-logo");
+            return brandLogo && typeof brandLogo.decode === "function"
+              ? brandLogo.decode().catch(() => {})
+              : Promise.resolve();
+          })(), timeoutAfter(900)])
         ];
 
         let finishedTasks = 0;
@@ -4201,7 +4405,7 @@
         await new Promise(resolve => window.requestAnimationFrame(() => window.requestAnimationFrame(resolve)));
         updatePageLoader(100);
         await timeoutAfter(120);
-        pageLoader?.classList.add("is-complete");
+        if (pageLoader) pageLoader.classList.add("is-complete");
         window.setTimeout(() => {
           if (pageLoader) pageLoader.hidden = true;
         }, 520);
@@ -4285,9 +4489,11 @@
         });
       });
 
-      backgroundMusic?.addEventListener("play", () => {
-        removeBackgroundMusicUnlockListeners();
-      }, { once: true });
+      if (backgroundMusic) {
+        backgroundMusic.addEventListener("play", () => {
+          removeBackgroundMusicUnlockListeners();
+        }, { once: true });
+      }
 
       window.addEventListener("load", () => {
         tryPlayBackgroundMusic();
@@ -4507,10 +4713,11 @@
         const stop = () => {
           running = false;
           window.cancelAnimationFrame(animationFrame);
-          resizeObserver?.disconnect();
+          if (resizeObserver) resizeObserver.disconnect();
           window.removeEventListener("pointermove", onPointerMove);
-          if (canvas?.parentNode === fx) fx.removeChild(canvas);
-          gl?.getExtension("WEBGL_lose_context")?.loseContext();
+          if (canvas && canvas.parentNode === fx) fx.removeChild(canvas);
+          const loseContext = gl ? gl.getExtension("WEBGL_lose_context") : null;
+          if (loseContext) loseContext.loseContext();
           canvas = null;
           gl = null;
           program = null;
@@ -4556,9 +4763,9 @@
             const nearViewport = rect.width > 0 && rect.height > 0 && rect.bottom >= -300 && rect.top <= window.innerHeight + 300;
             const activePortfolioButton = body.classList.contains("portfolio-mode") && nearViewport && !slide;
             if (activeLandingButton || activePortfolioButton) {
-              button.specularController?.start();
+              if (button.specularController) button.specularController.start();
             } else {
-              button.specularController?.stop();
+              if (button.specularController) button.specularController.stop();
             }
           });
         });
@@ -4645,7 +4852,7 @@
         const incomingSlide = slides[nextSlide];
         const movingForward = nextSlide > previousSlideIndex;
 
-        const incomingMedia = incomingSlide?.querySelector(".slide-media[data-image]");
+        const incomingMedia = incomingSlide ? incomingSlide.querySelector(".slide-media[data-image]") : null;
         if (incomingMedia && incomingMedia.dataset.imageReady !== "true") {
           slideTransitioning = true;
           ensureSlideImage(incomingSlide, "high").finally(() => {
@@ -4745,7 +4952,7 @@
           ...document.querySelectorAll(".discipline, .about")
         ];
         const targetElement = document.querySelector(targetSelector);
-        const currentSection = targetElement?.matches(".discipline, .about")
+        const currentSection = targetElement && targetElement.matches(".discipline, .about")
           ? targetElement
           : null;
         const showAllSections = targetSelector === "#work" || !currentSection;
@@ -4759,14 +4966,17 @@
         filterableSections.forEach(section => {
           section.classList.toggle("portfolio-current", section === currentSection);
         });
-        syncSideRays(currentSection?.id || "");
+        syncSideRays(currentSection ? currentSection.id : "");
         closeMenu();
         updateHeaderState();
         window.requestAnimationFrame(() => {
-          (showAllSections ? document.querySelector("#work") : currentSection)?.scrollIntoView({
-            behavior: "auto",
-            block: "start"
-          });
+          const scrollTarget = showAllSections ? document.querySelector("#work") : currentSection;
+          if (scrollTarget) {
+            scrollTarget.scrollIntoView({
+              behavior: "auto",
+              block: "start"
+            });
+          }
         });
       }
 
@@ -4883,7 +5093,7 @@
         window.setTimeout(() => {
           if (!lightbox.classList.contains("is-open")) {
             lightbox.hidden = true;
-            webpageRestoreFocus?.focus({ preventScroll: true });
+            if (webpageRestoreFocus) webpageRestoreFocus.focus({ preventScroll: true });
           }
         }, reduceMotion ? 0 : 340);
       }
@@ -5001,6 +5211,7 @@
           visual.controls = true;
           visual.playsInline = true;
           visual.preload = "metadata";
+          if (normalized.poster) visual.poster = normalized.poster;
           visual.dataset.audioPolicy = playsOriginalAudio ? "foreground" : "background-only";
           if (!playsOriginalAudio) {
             const enforceMutedPlayback = () => {
@@ -5015,17 +5226,46 @@
           }
           visual.setAttribute("controlsList", "nodownload");
           visual.setAttribute("aria-label", normalized.name);
+          const compatibilityNotice = document.createElement("div");
+          compatibilityNotice.className = "video-compat-notice";
+          compatibilityNotice.textContent = "当前设备暂不支持此视频格式，请使用支持 HEVC 的浏览器或设备观看。";
+          const hevcSource = /(?:Cuqod7WYoboA|ZjWXBxsdOAMA|ZBdOxTylCL8A|wBJckpaJnk0A|yF5Do3u7MrcA|oSDtBxXuF7oA)\.mp4(?:$|\?)/i.test(normalized.src);
+          const hevcCapability = visual.canPlayType('video/mp4; codecs="hvc1"') || visual.canPlayType('video/mp4; codecs="hev1"');
+          const markVideoIncompatible = () => {
+            frame.classList.add("is-video-incompatible");
+          };
+          if (hevcSource && !hevcCapability) markVideoIncompatible();
+          visual.addEventListener("error", markVideoIncompatible);
           const syncVideoRatio = () => {
             if (visual.videoWidth > 0 && visual.videoHeight > 0) {
               frame.style.setProperty("--video-ratio", `${visual.videoWidth} / ${visual.videoHeight}`);
             }
           };
-          visual.addEventListener("loadedmetadata", syncVideoRatio);
+          let firstFramePrimed = false;
+          const primeFirstFrame = () => {
+            if (firstFramePrimed || !Number.isFinite(visual.duration) || visual.duration <= 0) return;
+            firstFramePrimed = true;
+            try {
+              visual.currentTime = Math.min(.04, visual.duration / 1000);
+            } catch (error) {
+              firstFramePrimed = false;
+            }
+          };
+          visual.addEventListener("loadedmetadata", () => {
+            syncVideoRatio();
+            primeFirstFrame();
+          });
           visual.addEventListener("loadeddata", () => {
             syncVideoRatio();
+            visual.pause();
             frame.classList.add("is-first-frame-ready");
+            frame.classList.remove("is-video-incompatible");
           }, { once: true });
-          if (visual.readyState >= HTMLMediaElement.HAVE_METADATA) syncVideoRatio();
+          if (visual.readyState >= HTMLMediaElement.HAVE_METADATA) {
+            syncVideoRatio();
+            primeFirstFrame();
+          }
+          frame.append(compatibilityNotice);
         } else if (normalized.type === "webpage") {
           visual.title = normalized.modalTitle || normalized.name;
           visual.loading = "lazy";
@@ -5175,7 +5415,7 @@
               const image = lightbox.querySelector("img");
               image.removeAttribute("src");
               image.alt = "";
-              restoreFocus?.focus({ preventScroll: true });
+              if (restoreFocus) restoreFocus.focus({ preventScroll: true });
             }
           }, reduceMotion ? 0 : 380);
         };
@@ -5426,7 +5666,7 @@
             lightbox.hidden = true;
             image.removeAttribute("src");
             image.alt = "";
-            lightbox.restoreFocus?.focus({ preventScroll: true });
+            if (lightbox.restoreFocus) lightbox.restoreFocus.focus({ preventScroll: true });
           }, reduceMotion ? 0 : 380);
         };
 
@@ -5755,7 +5995,7 @@
         });
 
         const resizeObserver = "ResizeObserver" in window ? new ResizeObserver(resize) : null;
-        resizeObserver?.observe(gallery);
+        if (resizeObserver) resizeObserver.observe(gallery);
         resize();
         window.requestAnimationFrame(draw);
         return card;
@@ -5794,7 +6034,7 @@
             lightbox.hidden = true;
             image.removeAttribute("src");
             image.alt = "";
-            lightbox.restoreFocus?.focus({ preventScroll: true });
+            if (lightbox.restoreFocus) lightbox.restoreFocus.focus({ preventScroll: true });
           }, reduceMotion ? 0 : 380);
         };
 
@@ -5863,9 +6103,9 @@
 
         const setActiveTile = tile => {
           if (activeTile === tile) return;
-          activeTile?.classList.remove("is-active");
+          if (activeTile) activeTile.classList.remove("is-active");
           activeTile = tile || null;
-          activeTile?.classList.add("is-active");
+          if (activeTile) activeTile.classList.add("is-active");
           hoveredColumn = activeTile ? Number(activeTile.dataset.column) : -1;
         };
 
@@ -5951,7 +6191,8 @@
             pointerTargetX = normalizedX * maxTilt;
             pointerTargetY = -normalizedY * maxTilt;
           }
-          const tile = document.elementFromPoint(event.clientX, event.clientY)?.closest(".drift-wall__tile");
+          const pointElement = document.elementFromPoint(event.clientX, event.clientY);
+          const tile = pointElement ? pointElement.closest(".drift-wall__tile") : null;
           setActiveTile(tile && wall.contains(tile) ? tile : null);
         });
 
@@ -5963,7 +6204,7 @@
         });
 
         const resizeObserver = "ResizeObserver" in window ? new ResizeObserver(updateMetrics) : null;
-        resizeObserver?.observe(wall);
+        if (resizeObserver) resizeObserver.observe(wall);
         updateMetrics();
 
         let lastFrame = performance.now();
@@ -6183,9 +6424,10 @@
           if (!running) return;
           running = false;
           window.cancelAnimationFrame(animationFrame);
-          resizeObserver?.disconnect();
-          if (canvas?.parentNode === container) container.removeChild(canvas);
-          gl?.getExtension("WEBGL_lose_context")?.loseContext();
+          if (resizeObserver) resizeObserver.disconnect();
+          if (canvas && canvas.parentNode === container) container.removeChild(canvas);
+          const loseContext = gl ? gl.getExtension("WEBGL_lose_context") : null;
+          if (loseContext) loseContext.loseContext();
           canvas = null;
           gl = null;
           program = null;
@@ -6312,7 +6554,8 @@
       }
 
       function ensureCategoryPagesForTarget(targetSelector) {
-        document.querySelector(".statement")?.remove();
+        const statement = document.querySelector(".statement");
+        if (statement) statement.remove();
         if (targetSelector === "#work") {
           Object.keys(categoryData).forEach(renderCategoryPage);
           return;
@@ -6355,10 +6598,13 @@
             if (!categoryId) return;
             enterPortfolio(`#${categoryId}`);
             window.requestAnimationFrame(() => {
-              document.querySelector(`[data-media-project="${id}"]`)?.scrollIntoView({
-                behavior: reduceMotion ? "auto" : "smooth",
-                block: "center"
-              });
+              const projectTarget = document.querySelector(`[data-media-project="${id}"]`);
+              if (projectTarget) {
+                projectTarget.scrollIntoView({
+                  behavior: reduceMotion ? "auto" : "smooth",
+                  block: "center"
+                });
+              }
             });
           });
           item.append(button);
